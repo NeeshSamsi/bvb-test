@@ -1,0 +1,85 @@
+# Notes
+
+## MVP
+
+- #### Home page
+  - Create New Button
+- #### Create New Receipt page
+  - **Form fields - All Manual**
+    - Invoice No
+    - Date
+    - Name,
+    - Class,
+    - Address,
+    - Mobile No,
+    - Email,
+    - PIN Code,
+    - State
+    - GSTIN,
+    - Admission Fee - Total Amt,
+    - Tuition Fee - Total Amt,
+    - Other Fee - Total Amt,
+    - Examination Fee - Total Amt,
+    - Annual Fee - Total Amt,
+    - Late / Misc. Fee - Total Amt,
+    - Total Rupees
+    - **Paragraph**
+      - Received with thanks from [Shri, Smt, Kum] - dropdown
+      - Name - \_\_\_\_,
+      - The sum of rupees \_\_\_\_/-
+      - by [Cash, Cheque, DD No.] - dropdown
+      - Number - \_\_\_\_
+      - Dated - \_\_\_\_
+      - drawn on \_\_\_\_(bank) Branch,
+      - towards Invoice No. [Autofills from first Invoice No. Field.]
+  - **Preview**
+    - Displays receipt with inputted values.
+  - **Print Button**
+    - Button that uses `'react-to-print'` to print give you a print dialogue
+
+## Goals - Final Product
+
+- #### Home Page
+  - **Create New Receipt Button**
+  - **List of Receipts**
+    - Talks to a db (local sqlite)
+    - Through Prisma
+    - Lists out all previous receipts ordered by descending date
+    - Pagination
+- #### New Receipt Page
+  - **Form fields**
+    - Invoice No - Autofill Increments with option to change,
+    - Date - Autofills `now()` with option to change,
+    - Name,
+    - Class,
+    - Address,
+    - Mobile No,
+    - Email,
+    - PIN Code,
+    - State - Autofills 'MAHARASHTRA' with option to change,
+    - GSTIN,
+    - Admission Fee - Total Amt,
+    - Tuition Fee - Total Amt,
+    - Other Fee - Total Amt,
+    - Examination Fee - Total Amt,
+    - Annual Fee - Total Amt,
+    - Late / Misc. Fee - Total Amt,
+    - Total Rupees - Autofills
+    - **Paragraph**
+      - Received with thanks from [Shri, Smt, Kum] - dropdown
+      - Name - \_\_\_\_,
+      - The sum of rupees \_\_\_\_/- - Automated with `'num-words'`
+      - by [Cash, Cheque, DD No.] - dropdown
+      - Number - \_\_\_\_
+      - Dated - \_\_\_\_ - Autofills with option to change,
+      - drawn on \_\_\_\_(bank) Branch,
+      - towards Invoice No. [Autofills from first Invoice No. Field.]
+  - **Preview**
+    - Displays receipt with inputted values.
+  - **Print Button**
+    - Button that uses `'react-to-print'` to print give you a print dialogue
+- #### Dynamic Individual Receipt
+  - **Dynamic Routing**
+    - Reads ID / Invoice No. from URL
+    - Fetches individual receipt from DB - Prisma
+    - _Home List hits this Endpoint_
